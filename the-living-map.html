@@ -123,4 +123,4 @@ slider.addEventListener("input",function(e){year=+e.target.value;draw();});
 function tick(){year=year>=Y1?Y0:year+1;slider.value=year;draw();}
 playBtn.addEventListener("click",function(){if(playing){clearInterval(timer);playing=false;playBtn.innerHTML="▶ Play";}else{if(year>=Y1){year=Y0;slider.value=year;}playing=true;playBtn.innerHTML="⏸ Pause";timer=setInterval(tick,150);}});
 draw();
-</script><script>(function(){function h(){try{parent.postMessage({crHeight:document.documentElement.scrollHeight},"*");}catch(e){}}window.addEventListener("load",h);window.addEventListener("resize",h);if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.body);}catch(e){}}setTimeout(h,400);setTimeout(h,1600);})();</script></body></html>
+</script><script>(function(){var last=0;function h(){var H=Math.max(document.body.scrollHeight,document.body.offsetHeight);if(H&&Math.abs(H-last)>3){last=H;try{parent.postMessage({crHeight:H},"*");}catch(e){}}}window.addEventListener("load",h);if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.body);}catch(e){}}setTimeout(h,300);setTimeout(h,1200);setInterval(h,2000);})();</script></body></html>
